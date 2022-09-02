@@ -1,0 +1,12 @@
+version: "2.4"
+
+services:
+  main-shared:
+    domainname: home
+    restart: always
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${CONF_DIR}/shared:/shared
