@@ -27,6 +27,7 @@ services:
       - DNS2=no
       - DNS_FQDN_REQUIRED=false
       - DNS_BOGUS_PRIV=true
+      - DNSMASQ_USER=root
       - REV_SERVER=true
       - REV_SERVER_TARGET=192.168.2.1
       - REV_SERVER_DOMAIN=home
