@@ -15,7 +15,6 @@ services:
     volumes:
       - ${CONF_DIR}/pihole/etc/:/etc/pihole/
       - ${CONF_DIR}/pihole/dnsmasqd/:/etc/dnsmasq.d/
-      - ${CONF_DIR}/pihole/log/pihole.log:/var/log/pihole.log
       - ${CONF_DIR}/pihole/log/pihole/:/var/log/pihole/
     environment:
       - ServerIP=${PIHOLE_IP}
