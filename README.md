@@ -1,9 +1,8 @@
 # pihole2_docker
 PiHole2 Docker
 
-
 ## Homepage Settings
-To allow Homepage to access the Docker host, do the folling:
+To allow Homepage to access the Docker host, do the following:
 
 1. Create `daemon.json` file in `/etc/docker`:
 
@@ -19,3 +18,5 @@ To allow Homepage to access the Docker host, do the folling:
 
 3. Reload the systemd daemon: `systemctl daemon-reload`
 4. Restart docker: `systemctl restart docker.service`
+
+Reference: https://gist.github.com/styblope/dc55e0ad2a9848f2cc3307d4819d819f
