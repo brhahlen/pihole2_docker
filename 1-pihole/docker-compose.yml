@@ -34,6 +34,14 @@ services:
       - REV_SERVER_DOMAIN=home
       - REV_SERVER_CIDR=192.168.2.0/24
       - CORS_HOSTS=dashboard.benweb.eu
-    # labels:
+    labels:
     ## Only monitor with Watchtower, do not auto-update
       # - "com.centurylinklabs.watchtower.monitor-only=true"
+      ### HomePage
+      - "homepage.group=Network"
+      - "homepage.name=PiHole Secondary"
+      - "homepage.icon=pihole.png"
+      - "homepage.href=https://pihhole2.benweb.eu"
+      - "homepage.description=Secondary"
+      - "homepage.widget.type=pihole"
+      - "homepage.widget.url=http://pihole2.home"
