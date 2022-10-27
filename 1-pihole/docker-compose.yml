@@ -41,7 +41,7 @@ services:
       - "homepage.group=Network"
       - "homepage.name=PiHole"
       - "homepage.icon=pihole.png"
-      - "homepage.href=https://pihhole2.benweb.eu"
+      - "homepage.href=https://phhole2.benweb.eu"
       - "homepage.description=Secondary"
       - "homepage.widget.type=pihole"
       - "homepage.widget.url=http://pihole2.home"
