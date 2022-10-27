@@ -39,9 +39,9 @@ services:
       # - "com.centurylinklabs.watchtower.monitor-only=true"
       ### HomePage
       - "homepage.group=Network"
-      - "homepage.name=PiHole"
+      - "homepage.name=PiHole 2"
       - "homepage.icon=pihole.png"
-      - "homepage.href=https://phhole2.benweb.eu"
+      - "homepage.href=https://pihole2.benweb.eu"
       - "homepage.description=Secondary"
       - "homepage.widget.type=pihole"
       - "homepage.widget.url=http://pihole2.home"
