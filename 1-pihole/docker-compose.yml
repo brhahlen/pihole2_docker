@@ -32,7 +32,7 @@ services:
       - REV_SERVER=true
       - REV_SERVER_TARGET=192.168.2.1
       - REV_SERVER_DOMAIN=home
-      - REV_SERVER_CIDR=192.168.2.0/24
+      - REV_SERVER_CIDR=192.168.2.0/23
       - CORS_HOSTS=dashboard.benweb.eu
     labels:
     ## Only monitor with Watchtower, do not auto-update
