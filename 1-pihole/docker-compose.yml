@@ -17,14 +17,13 @@ services:
       - ${CONF_DIR}/pihole/dnsmasqd/:/etc/dnsmasq.d/
       - ${CONF_DIR}/pihole/log/pihole/:/var/log/pihole/
     environment:
-      - ServerIP=${PIHOLE_IP}
+      - FTLCONF_LOCAL_IPV4=${PIHOLE_IP}
       - PROXY_LOCATION=pihole2
       - VIRTUAL_HOST=pihole2.home
       - VIRTUAL_PORT=80
       - TZ=${TZ}
       - WEBPASSWORD=v%JW3kr4UnPHILlf
-      - DNS1=192.168.2.1
-      - DNS2=no
+      - PIHOLE_DNS_=192.168.2.1
       - DNS_FQDN_REQUIRED=false
       - DNS_BOGUS_PRIV=true
         #- DNSMASQ_USER=root
