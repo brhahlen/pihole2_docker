@@ -45,6 +45,7 @@ services:
       - "homepage.description=Secondary"
       - "homepage.widget.type=pihole"
       - "homepage.widget.url=http://pihole2.home"
+      - "homepage.widget.key=4769d913c682e004664355c91cd7307399d13d1f363d55bd777b9d1d9c186138"
 
 # Docker Proxy
   dockerproxy:
