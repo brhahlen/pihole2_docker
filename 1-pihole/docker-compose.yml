@@ -40,6 +40,7 @@ services:
       - "homepage.group=Network"
       - "homepage.name=PiHole 2"
       - "homepage.icon=pihole.png"
+      - "homepage.weight=2"
       - "homepage.href=https://pihole2.benweb.eu"
       - "homepage.ping=https://pihole2.benweb.eu"
       - "homepage.description=Secondary"
