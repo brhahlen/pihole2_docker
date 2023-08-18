@@ -64,3 +64,30 @@ services:
     #     - 2375:2375
     volumes:
         - /var/run/docker.sock:/var/run/docker.sock:ro
+
+# Glances - Server monitoring
+  glances:
+    image: nicolargo/glances
+    container_name: pihole-glances
+    hostname: pihole-glances
+    extends:
+      file: ../shared.yml
+      service: common-shared
+    network_mode: host
+    privileged: true
+    pid: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - "GLANCES_OPT=-w"
+    labels:
+      ### HomePage
+      - "homepage.group=pihole"
+      - "homepage.name=Info"
+      - "homepage.icon=glances.png"
+      - "homepage.weight=1"
+      - "homepage.href=https://pihole-glances.${DOMAINNAME}"
+      - "homepage.ping=https://pihole-glances.${DOMAINNAME}"
+      - "homepage.widget.type=glances"
+      - "homepage.widget.url=https://pihole-glances.${DOMAINNAME}"
+      - "homepage.widget.metric=info"
