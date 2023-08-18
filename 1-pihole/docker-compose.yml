@@ -82,7 +82,7 @@ services:
       - "GLANCES_OPT=-w"
     labels:
       ### HomePage
-      - "homepage.group=pihole"
+      - "homepage.group=PiHolePi"
       - "homepage.name=Info"
       - "homepage.icon=glances.png"
       - "homepage.weight=1"
