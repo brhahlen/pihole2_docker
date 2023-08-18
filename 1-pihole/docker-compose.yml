@@ -83,8 +83,8 @@ services:
     labels:
       ### HomePage
       - "homepage.group=PiHolePi"
-      - "homepage.name=Info"
-      - "homepage.icon=glances.png"
+      - "homepage.name=CPU Usage"
+      # - "homepage.icon=glances.png"
       - "homepage.weight=1"
       - "homepage.href=https://pihole-glances.${DOMAINNAME}"
       - "homepage.ping=https://pihole-glances.${DOMAINNAME}"
