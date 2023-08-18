@@ -72,7 +72,7 @@ services:
     hostname: pihole-glances
     extends:
       file: ../shared.yml
-      service: common-shared
+      service: main-shared
     network_mode: host
     privileged: true
     pid: host
