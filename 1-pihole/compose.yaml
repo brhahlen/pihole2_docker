@@ -40,8 +40,9 @@ services:
     extends:
       file: ../shared.yml
       service: main-shared
-    ports:
-      - 3001:3001
+    network_mode: host
+    # ports:
+    #   - 3001:3001
     volumes:
       - ${CONF_DIR}/uptime-kuma:/app/data
     labels:
