@@ -48,6 +48,31 @@ services:
       - "homepage.widget.url=http://pihole2.home"
       - "homepage.widget.key=4769d913c682e004664355c91cd7307399d13d1f363d55bd777b9d1d9c186138"
 
+# Uptime-Kuma - Monitors uptime
+  uptime-kuma:
+    image: docker.io/louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    hostname: uptime-kuma
+    extends:
+      file: ../shared.yml
+      service: main-shared
+    ports:
+      - 3001:3001
+    volumes:
+      - ${CONF_DIR}/uptime-kuma:/app/data
+    labels:
+      ### HomePage
+      - "homepage.group=System"
+      - "homepage.name=Uptime-Kuma"
+      - "homepage.icon=uptime-kuma.png"
+      - "homepage.weight=1"
+      - "homepage.href=https://uptime.benweb.eu"
+      - "homepage.ping=https://uptime.benweb.eu"
+      - "homepage.description=Primary"
+      - "homepage.widget.type=uptimekuma"
+      - "homepage.widget.url=https://uptime.benweb.eu"
+      - "homepage.widget.slug=all"
+
 # Docker Proxy
   dockerproxy:
     image: ghcr.io/tecnativa/docker-socket-proxy:latest
