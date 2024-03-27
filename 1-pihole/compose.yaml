@@ -16,23 +16,7 @@ services:
       - ${CONF_DIR}/pihole/etc/:/etc/pihole/
       - ${CONF_DIR}/pihole/dnsmasqd/:/etc/dnsmasq.d/
       - ${CONF_DIR}/pihole/log/pihole/:/var/log/pihole/
-    environment:
-      - FTLCONF_LOCAL_IPV4=${PIHOLE_IP}
-      - PROXY_LOCATION=pihole2
-      - VIRTUAL_HOST=pihole2.home
-      - VIRTUAL_PORT=80
-      - TZ=${TZ}
-      - WEBPASSWORD=v%JW3kr4UnPHILlf
-      - PIHOLE_DNS_=192.168.2.1
-      - DNS_FQDN_REQUIRED=false
-      - DNS_BOGUS_PRIV=true
-        #- DNSMASQ_USER=root
-        #- PIHOLE_UID=0
-      - REV_SERVER=true
-      - REV_SERVER_TARGET=192.168.2.1
-      - REV_SERVER_DOMAIN=home
-      - REV_SERVER_CIDR=192.168.2.0/23
-      - CORS_HOSTS=dashboard.benweb.eu
+    env_file: pihole.env
     labels:
     ## Only monitor with Watchtower, do not auto-update
       # - "com.centurylinklabs.watchtower.monitor-only=true"
