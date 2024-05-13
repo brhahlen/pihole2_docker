@@ -100,4 +100,5 @@ services:
       - "homepage.ping=https://pihole-glances.${DOMAINNAME}"
       - "homepage.widget.type=glances"
       - "homepage.widget.url=https://pihole-glances.${DOMAINNAME}"
+      - "homepage.widget.version=4"
       - "homepage.widget.metric=cpu"
