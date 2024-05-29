@@ -17,20 +17,6 @@ services:
       - ${CONF_DIR}/pihole/dnsmasqd/:/etc/dnsmasq.d/
       - ${CONF_DIR}/pihole/log/pihole/:/var/log/pihole/
     env_file: pihole.env
-    labels:
-    ## Only monitor with Watchtower, do not auto-update
-      # - "com.centurylinklabs.watchtower.monitor-only=true"
-      ### HomePage
-      - "homepage.group=Network"
-      - "homepage.name=PiHole 2"
-      - "homepage.icon=pi-hole.png"
-      - "homepage.weight=2"
-      - "homepage.href=https://pihole2.benweb.eu"
-      - "homepage.ping=https://pihole2.benweb.eu"
-      - "homepage.description=Secondary"
-      - "homepage.widget.type=pihole"
-      - "homepage.widget.url=http://pihole2.home"
-      - "homepage.widget.key=4769d913c682e004664355c91cd7307399d13d1f363d55bd777b9d1d9c186138"
 
 # Uptime-Kuma - Monitors uptime
   uptime-kuma:
@@ -45,18 +31,6 @@ services:
     #   - 3001:3001
     volumes:
       - ${CONF_DIR}/uptime-kuma:/app/data
-    labels:
-      ### HomePage
-      - "homepage.group=System"
-      - "homepage.name=Uptime-Kuma"
-      - "homepage.icon=uptime-kuma.png"
-      - "homepage.weight=1"
-      - "homepage.href=https://uptime.benweb.eu"
-      - "homepage.ping=https://uptime.benweb.eu"
-      - "homepage.description=Primary"
-      - "homepage.widget.type=uptimekuma"
-      - "homepage.widget.url=https://uptime.benweb.eu"
-      - "homepage.widget.slug=all"
 
 # Docker Proxy
   dockerproxy:
@@ -90,15 +64,3 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - "GLANCES_OPT=-w"
-    labels:
-      ### HomePage
-      - "homepage.group=PiHolePi"
-      - "homepage.name=CPU Usage"
-      # - "homepage.icon=glances.png"
-      - "homepage.weight=1"
-      - "homepage.href=https://pihole-glances.${DOMAINNAME}"
-      - "homepage.ping=https://pihole-glances.${DOMAINNAME}"
-      - "homepage.widget.type=glances"
-      - "homepage.widget.url=https://pihole-glances.${DOMAINNAME}"
-      - "homepage.widget.version=4"
-      - "homepage.widget.metric=cpu"
