@@ -46,6 +46,7 @@ services:
       file: ../shared.yml
       service: main-shared
     # network_mode: host
+    privileged: true
     environment:
         - CONTAINERS=1 # Allow access to viewing containers
         - POST=0 # Disallow any POST operations (effectively read-only)
