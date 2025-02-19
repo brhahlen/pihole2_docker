@@ -3,15 +3,19 @@ services:
     extends:
       file: ../shared.yml
       service: main-shared
-    network_mode: host
+    # network_mode: host
     container_name: pihole2
     hostname: pihole2
     image: pihole/pihole:latest
-    cap_add:
-      - NET_ADMIN
-    dns:
-      - 127.0.0.1
-      - 1.1.1.1
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "853:853"
+    # cap_add:
+    #   - NET_ADMIN
+    # dns:
+    #   - 127.0.0.1
+    #   - 1.1.1.1
     volumes:
       - ${CONF_DIR}/pihole/etc/:/etc/pihole/
       - ${CONF_DIR}/pihole/dnsmasqd/:/etc/dnsmasq.d/
@@ -26,9 +30,9 @@ services:
     extends:
       file: ../shared.yml
       service: main-shared
-    network_mode: host
-    # ports:
-    #   - 3001:3001
+    # network_mode: host
+    ports:
+      - 3001:3001
     volumes:
       - ${CONF_DIR}/uptime-kuma:/app/data
 
@@ -40,12 +44,12 @@ services:
     extends:
       file: ../shared.yml
       service: main-shared
-    network_mode: host
+    # network_mode: host
     environment:
         - CONTAINERS=1 # Allow access to viewing containers
         - POST=0 # Disallow any POST operations (effectively read-only)
-    # ports:
-    #     - 2375:2375
+    ports:
+        - 2375:2375
     volumes:
         - /var/run/docker.sock:/var/run/docker.sock:ro
 
