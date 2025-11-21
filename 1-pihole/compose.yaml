@@ -41,7 +41,7 @@ services:
     extends:
       file: ../shared.yml
       service: main-shared
-    image: henrygd/beszel-agent-intel
+    image: henrygd/beszel-agent
     container_name: beszel-agent
     hostname: beszel-agent
     network_mode: host
