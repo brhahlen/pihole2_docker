@@ -61,6 +61,8 @@ services:
       # - /mnt/disk/.beszel:/extra-filesystems/sda1:ro
       # Monitor SystemD Services
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket:ro
+    security_opt:
+      - apparmor:unconfined
 
 # Docker Proxy
   dockerproxy:
