@@ -25,7 +25,7 @@ services:
 
 # Uptime-Kuma - Monitors uptime
   uptime-kuma:
-    image: docker.io/louislam/uptime-kuma:latest
+    image: louislam/uptime-kuma:2
     container_name: uptime-kuma
     hostname: uptime-kuma
     extends:
